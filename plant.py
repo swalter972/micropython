@@ -20,6 +20,11 @@ while True:
     
     
     #display.set_pixel(x,y,valeur_lumiere)
+
+    if button_a.is_pressed() and button_b.is_pressed():
+        lumiere = echelle(display.read_light_level(), 0, 255, 0, 9)
+        print (lumiere)
+        display.show(lumiere)
     
     if button_a.is_pressed():
         display.scroll(temperature())
@@ -29,9 +34,4 @@ while True:
         humid= echelle(pin0.read_analog(),0,480,0,9)
         display.show(humid)
     
-    if button_a.is_pressed() and button_b.is_pressed():
-        lumiere = echelle(display.read_light_level(), 0, 255, 0, 9)
-        print (lumiere)
-        display.show(lumiere)
-
-
+    
